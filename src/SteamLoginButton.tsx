@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { getCurrentUser, type User } from "./api/auth";
+import { Link } from "react-router";
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 export function SteamLoginButton() {
   const login = () => {
-    console.log(API_URL);
     window.location.assign(`${API_URL}/auth/steam`);
   };
 
@@ -46,6 +46,15 @@ export function SteamLoginButton() {
       >
         Войти через Steam
       </button>
+    );
+  } else {
+    return (
+      <Link
+        to={"/profile"}
+        className="text-sm font-medium text-gray-400 transition-colors hover:text-white"
+      >
+        Профиль
+      </Link>
     );
   }
 }
