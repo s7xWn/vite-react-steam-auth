@@ -57,7 +57,7 @@ export default function Layout() {
   //     product.name.toLowerCase().includes(query.toLowerCase()),
   //   );
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#080C15] text-slate-100 selection:bg-sky-400/30">
+    <div className="relative min-h-screen overflow-x-clip bg-[#080C15] text-slate-100 selection:bg-sky-400/30 ">
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute -top-64 left-[15%] h-[550px] w-[550px] rounded-full bg-sky-500/10 blur-[140px]" />
         <div className="absolute right-[-180px] top-[20%] h-[450px] w-[450px] rounded-full bg-blue-600/10 blur-[140px]" />
@@ -75,9 +75,16 @@ export default function Layout() {
 
         {/* Sidebar */}
         <aside
-          className={`fixed inset-y-0 left-0 z-50 flex w-[260px] flex-col border-r border-white/[0.07] bg-[#0A0F1B]/95 px-5 py-6 backdrop-blur-2xl transition-transform duration-300 lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 ${
-            mobileOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+          className={`fixed 
+            inset-y-0 
+            left-0 
+            z-50 
+            flex w-[260px] flex-col border-r border-white/[0.07] 
+            bg-[#0A0F1B]/95 px-5 py-6 backdrop-blur-2xl 
+            transition-transform duration-300 
+            lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 ${
+              mobileOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
         >
           <div className="flex items-center justify-between px-2">
             <Link to="/" className="flex items-center gap-3">
