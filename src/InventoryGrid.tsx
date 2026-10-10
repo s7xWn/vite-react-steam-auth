@@ -1,4 +1,13 @@
-export default function InventoryGrid({ items }) {
+type InventoryItem = {
+  name: string;
+  icon_url: string;
+};
+
+type InventoryGridProps = {
+  items: InventoryItem[];
+};
+
+export default function InventoryGrid({ items }: InventoryGridProps) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-8">
       {items.map((item, i) => (
